@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Tracker</title>
+  <link rel="stylesheet" href="book-tracker.css" />
+  <link rel="icon" type="image/png" href="/rsc-logo.png" />
+</head>
+<body>
+  <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="book-tracker.html" class="nav-link active">Book Tracker</a>
+  <a href="calculator.html" class="nav-link">Basic Calculator with History</a>
+  <a href="guess-game.html" class="nav-link">Guess the Word Game</a>
+  <a href="quiz-app.html" class="nav-link">Simple Quiz App</a>
+  <a href="expense-logger.html" class="nav-link">Expense Logger</a>
+  <a href="daily-journal.html" class="nav-link">Daily Journal App</a>
+  <a href="mad-lib.html" class="nav-link">Mad Lib Generator</a>
+  <a href="text-analyzer.html" class="nav-link">Text Analyzer Tool</a>
+  <a href="file-organizer.html" class="nav-link">Simple File Organizer</a>
+</nav>
+  <div class="container">
+    <h1>📚 Book Tracker</h1>
+
+    <div class="controls">
+      <input type="file" id="fileInput" accept=".txt" />
+      <button id="addRowBtn">➕ Add Row</button>
+      <button id="downloadBtn">⬇️ Download Updated List</button>
+      <button id="toggleThemeBtn">🌙 Toggle Dark Mode</button>
+    </div>
+
+    <div class="table-container">
+      <table id="bookTable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic Rows Here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const addRowBtn = document.getElementById('addRowBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+    const tableBody = document.querySelector('#bookTable tbody');
+
+    // Load saved data if available
+    window.addEventListener('load', () => {
+      const savedData = localStorage.getItem('bookList');
+      if (savedData) {
+        loadTableFromText(savedData);
+      }
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      }
+    });
+
+    // File upload
+    fileInput.addEventListener('change', function() {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const text = e.target.result;
+          loadTableFromText(text);
+          saveToLocal();
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    // Add row manually
+    addRowBtn.addEventListener('click', function() {
+      addRow('', '', '');
+      saveToLocal();
+    });
+
+    // Download updated file
+    downloadBtn.addEventListener('click', function() {
+      const text = getTableAsText();
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'updated_book_list.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // Theme toggle
+    toggleThemeBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Add row function
+    function addRow(title, author, status) {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td contenteditable="true">${title}</td>
+        <td contenteditable="true">${author}</td>
+        <td contenteditable="true">${status}</td>
+        <td><button onclick="deleteRow(this)">🗑️ Delete</button></td>
+      `;
+      tableBody.appendChild(row);
+      saveToLocal();
+    }
+
+    // Delete row function
+    window.deleteRow = function(button) {
+      button.parentElement.parentElement.remove();
+      saveToLocal();
+    };
+
+    // Load table from file text
+    function loadTableFromText(text) {
+      tableBody.innerHTML = '';
+      const lines = text.trim().split('\n');
+      for (const line of lines) {
+        const [title, author, status] = line.split('|');
+        if (title && author && status) {
+          addRow(title.trim(), author.trim(), status.trim());
+        }
+      }
+    }
+
+    // Get table as text for download
+    function getTableAsText() {
+      let rows = [];
+      tableBody.querySelectorAll('tr').forEach(tr => {
+        const cells = tr.querySelectorAll('td');
+        if (cells.length >= 3) {
+          rows.push(`${cells[0].innerText.trim()}|${cells[1].innerText.trim()}|${cells[2].innerText.trim()}`);
+        }
+      });
+      return rows.join('\n');
+    }
+
+    // Save table to local storage
+    function saveToLocal() {
+      const text = getTableAsText();
+      localStorage.setItem('bookList', text);
+    }
+  </script>
+</body>
+</html>
