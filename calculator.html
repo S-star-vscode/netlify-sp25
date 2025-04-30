@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basic Calculator with History</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="calculator.css" />
+  <link rel="icon" type="image/png" href="/rsc-logo.png" />
 </head>
 <body>
   <nav>
@@ -19,10 +20,28 @@
   <a href="text-analyzer.html" class="nav-link">Text Analyzer Tool</a>
   <a href="file-organizer.html" class="nav-link">Simple File Organizer</a>
 </nav>
-
-  <div class="content">
-    <h1>Basic Calculator with History</h1>
-    <p>This is the basic calculator with history page.</p>
-  </div>
+  <h1 class="calc1">🖩 Basic Calculator with History</h1>
+<button id="toggleTheme">🌙 Toggle Dark Mode</button>
+    <div class="calculator">
+      <h1>Basic Calculator</h1>
+      <input type="number" id="num1" placeholder="First number">
+      <input type="number" id="num2" placeholder="Second number">
+  
+      <div class="buttons">
+        <button onclick="calculate('+', this)">+</button>
+        <button onclick="calculate('-',this)">−</button>
+        <button onclick="calculate('*', this)">×</button>
+        <button onclick="calculate('/', this)">÷</button>
+      </div>
+  
+      <textarea id="history" readonly></textarea>
+    
+      <div class="storage-buttons">
+        <button onclick="saveHistory()">Save</button>
+        <button onclick="loadHistory()">Load</button>
+        <button onclick="clearHistory()">Clear</button>
+      </div>
+    </div>
+    <script src="calculator-script.js"></script>
 </body>
 </html>
