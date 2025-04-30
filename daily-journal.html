@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Journal App</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="journal.css" />
   <link rel="icon" type="image/png" href="/rsc-logo.png" />
 </head>
 <body>
   <nav>
   <a href="index.html" class="nav-link">Home</a>
   <a href="book-tracker.html" class="nav-link">Book Tracker</a>
-  <a href="calculator.html" class="nav-link">Basic Calculator with History</a>
+  <a href="basic-calculator.html" class="nav-link">Basic Calculator with History</a>
   <a href="guess-game.html" class="nav-link">Guess the Word Game</a>
   <a href="quiz-app.html" class="nav-link">Simple Quiz App</a>
   <a href="expense-logger.html" class="nav-link">Expense Logger</a>
@@ -19,11 +19,35 @@
   <a href="mad-lib.html" class="nav-link">Mad Lib Generator</a>
   <a href="text-analyzer.html" class="nav-link">Text Analyzer Tool</a>
   <a href="file-organizer.html" class="nav-link">Simple File Organizer</a>
+  <a href="study-flash-cards.html" class="nav-link">Flash Cards Study App</a>
 </nav>
+<div class="container">
+    <h1 class="calc1">🗒️Daily Journal</h1>
+    <button id="toggleTheme">🌙 Toggle Dark Mode</button>
 
-  <div class="content">
-    <h1>Daily Journal App</h1>
-    <p>This is the daily journal app page.</p>
+  <label for="journal-date">Date (YYYY-MM-DD):</label>
+  <input type="date" id="journal-date" />
+
+  <div class="toolbar">
+    <button onclick="format('bold')"><b>B</b></button>
+    <button onclick="format('italic')"><i>I</i></button>
+    <button onclick="format('underline')"><u>U</u></button>
+    <button onclick="format('strikeThrough')"><s>S</s></button>
+    <button onclick="removeFormatting()">Remove Formatting</button>
+  </div>
+
+  <div id="editor" contenteditable="true" placeholder="Write your journal entry here..."></div>
+  <div class="actions">
+    <button onclick="saveEntry()">💾 Save Entry</button>
+    <button onclick="loadEntry()">📂 Load Entry</button>
+  </div>
+  <label for="tag-search">Search by Tag (e.g. #mood):</label>
+  <input type="text" id="tag-search" placeholder="#tag" />
+  <button onclick="searchByTag()">🔍 Search</button>
+  <ul id="search-results"></ul>
+</div>
+
+<script src="journal.js"></script>
   </div>
 </body>
 </html>

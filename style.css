@@ -34,3 +34,58 @@ nav a.active {
 .content {
   padding: 20px;
 }
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+
+.download-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-item img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #002f59;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #ffba00;
+  color: #002f59;
+  font-weight: bold;
+}
+.allignment {
+  text-align: center;
+}
+
+.allignment1 {
+  text-align: center;
+  font-style: italic;
+}
+.pheader {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 7.5%;;
+}

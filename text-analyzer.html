@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Text Analyzer Tool</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="text-analyzer.css" />
   <link rel="icon" type="image/png" href="/rsc-logo.png" />
 </head>
 <body>
   <nav>
   <a href="index.html" class="nav-link">Home</a>
   <a href="book-tracker.html" class="nav-link">Book Tracker</a>
-  <a href="calculator.html" class="nav-link">Basic Calculator with History</a>
+  <a href="basic-calculator.html" class="nav-link">Basic Calculator with History</a>
   <a href="guess-game.html" class="nav-link">Guess the Word Game</a>
   <a href="quiz-app.html" class="nav-link">Simple Quiz App</a>
   <a href="expense-logger.html" class="nav-link">Expense Logger</a>
@@ -19,11 +19,17 @@
   <a href="mad-lib.html" class="nav-link">Mad Lib Generator</a>
   <a href="text-analyzer.html" class="nav-link active">Text Analyzer Tool</a>
   <a href="file-organizer.html" class="nav-link">Simple File Organizer</a>
+  <a href="study-flash-cards.html" class="nav-link">Flash Cards Study App</a>
 </nav>
 
-  <div class="content">
-    <h1>Text Analyzer Tool</h1>
-    <p>This is the text analyzer tool page.</p>
+<div class="container">
+<h1 class="calc1">🖹 Text Analyzer</h1>
+<button id="toggleTheme">🌙 Toggle Dark Mode</button>
+<br>
+  <input type="file" id="fileInput" accept=".txt" />
+  <div class="results" id="results"></div>
+
+  <script src="text-analyzer.js"></script>
   </div>
 </body>
 </html>

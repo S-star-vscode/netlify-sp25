@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple File Organizer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>File Organizer</title>
+  <link rel="stylesheet" href="file-organizer.css" />
   <link rel="icon" type="image/png" href="/rsc-logo.png" />
 </head>
 <body>
   <nav>
   <a href="index.html" class="nav-link">Home</a>
   <a href="book-tracker.html" class="nav-link">Book Tracker</a>
-  <a href="calculator.html" class="nav-link">Basic Calculator with History</a>
+  <a href="basic-calculator.html" class="nav-link">Basic Calculator with History</a>
   <a href="guess-game.html" class="nav-link">Guess the Word Game</a>
   <a href="quiz-app.html" class="nav-link">Simple Quiz App</a>
   <a href="expense-logger.html" class="nav-link">Expense Logger</a>
@@ -19,11 +19,55 @@
   <a href="mad-lib.html" class="nav-link">Mad Lib Generator</a>
   <a href="text-analyzer.html" class="nav-link">Text Analyzer Tool</a>
   <a href="file-organizer.html" class="nav-link active">Simple File Organizer</a>
+  <a href="study-flash-cards.html" class="nav-link">Flash Cards Study App</a>
 </nav>
 
   <div class="content">
-    <h1>Simple File Organizer</h1>
-    <p>This is the simple file organizer page.</p>
+    <div class="container">
+      <h1 class="calc1">🗄️File Organizer</h1>
+      <h3 class="allignment1">For security purposes this page is view-only and you can not view/edit your own PC files from here</h3>
+<button id="toggleTheme">🌙 Toggle Dark Mode</button>
+  
+<div class="path-controls">
+  <input type="text" id="pathInput" placeholder="Enter or browse a folder" />
+  <button id="browseBtn">Browse</button>
+  <button id="upBtn">Up</button>
+</div>
+
+<table id="fileTable">
+  <thead>
+    <tr>
+      <th data-sort="name">Name</th>
+      <th data-sort="size">Size</th>
+      <th data-sort="modified">Modified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Files will be populated here -->
+  </tbody>
+</table>
+
+<div class="actions">
+  <button id="moveBtn">Move Selected Files</button>
+  <button id="deleteBtn">Delete Selected Files</button>
+</div>
+
+<div class="organize-controls">
+  <h2>Smart Organize:</h2>
+  <button id="organizeExt">By Extension</button>
+  <button id="organizeDate">By Date</button>
+  <button id="organizeSize">By Size</button>
+</div>
+
+<div class="watcher-controls">
+  <label><input type="radio" name="watchMode" value="extension" checked /> Extension</label>
+  <label><input type="radio" name="watchMode" value="date" /> Date</label>
+  <label><input type="radio" name="watchMode" value="size" /> Size</label>
+  <button id="startWatch">Start Watching</button>
+  <button id="stopWatch">Stop Watching</button>
+</div>
+  
+    <script src="file-organizer.js"></script>
   </div>
 </body>
 </html>

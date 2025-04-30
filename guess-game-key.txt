@@ -1,0 +1,11 @@
+Roof
+
+Window
+
+Closet
+
+Chimney
+
+Kitchen
+
+Basement

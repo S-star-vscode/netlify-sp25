@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: "nimbus-sans", sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  nav {
+    background-color: #002f59;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  nav a {
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    background-color: #002f59;
+  }
+  
+  nav a:hover {
+    background-color: #005a9e;
+  }
+  
+  nav a.active {
+    background-color: #ffba00;
+    color: #002f59;
+    font-weight: bold;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+
+
+/* Center the quiz container */
+.quiz-wrapper {
+  min-height: calc(100vh - 60px); /* adjust if your nav is taller */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Quiz card styling */
+.quiz-container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+.quiz-container h1 {
+  margin-bottom: 10px;
+}
+
+/* Question text */
+#question-box {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Answer buttons */
+#choices button {
+  width: 100%;
+  max-width: 400px;
+  margin: 6px 0;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+#choices button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Final result */
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Incorrect answer list */
+#incorrect-summary {
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Styling for correct and incorrect lines */
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+/* Try Again button */
+#try-again {
+  margin-top: 15px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#try-again:hover {
+  background-color: #005fa3;
+}
+
+  /* Theme toggle support */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.light input,
+  body.light textarea {
+    background: #f0f0f0;
+    color: #000;
+  }
+  
+  body.dark {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  body.dark input,
+  body.dark textarea {
+    background: #333;
+    color: #fff;
+  }
+  
+  #toggleTheme {
+    margin: 10px auto;
+    display: block;
+    background-color: #002f59;
+    color: white;
+    border-radius: 8px;
+  }
+  .calc1 {
+    text-align: center;
+    color: #002f59;
+    }

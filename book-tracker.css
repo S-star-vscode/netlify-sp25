@@ -262,4 +262,33 @@ body {
   body.dark .controls input[type="file"]:hover {
     background-color: #666;
   }
-    
+    /* Theme toggle support */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light input,
+body.light textarea {
+  background: #f0f0f0;
+  color: #000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #333;
+  color: #fff;
+}
+
+#toggleTheme {
+  margin: 10px auto;
+  display: block;
+  background-color: #002f59;
+  color: white;
+  border-radius: 8px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flash Card Study App</title>
+  <link rel="stylesheet" href="study.css" />
+  <link rel="icon" type="image/png" href="/rsc-logo.png" />
+</head>
+<body>
+  <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="book-tracker.html" class="nav-link">Book Tracker</a>
+  <a href="basic-calculator.html" class="nav-link">Basic Calculator with History</a>
+  <a href="guess-game.html" class="nav-link">Guess the Word Game</a>
+  <a href="quiz-app.html" class="nav-link">Simple Quiz App</a>
+  <a href="expense-logger.html" class="nav-link">Expense Logger</a>
+  <a href="daily-journal.html" class="nav-link">Daily Journal App</a>
+  <a href="mad-lib.html" class="nav-link">Mad Lib Generator</a>
+  <a href="text-analyzer.html" class="nav-link">Text Analyzer Tool</a>
+  <a href="file-organizer.html" class="nav-link">Simple File Organizer</a>
+  <a href="study-flash-cards.html" class="nav-link active">Flash Cards Study App</a>
+</nav>
+<div class="game-container">
+  <h1>Flash Card Study App</h1>
+
+  <button id="toggleMode">🌙 Toggle Dark Mode</button>
+
+  <div>
+    <label>Question:</label>
+    <span id="questionLabel"></span>
+  </div>
+
+  <div>
+    <label for="answerInput">Your Answer:</label>
+    <input type="text" id="answerInput" />
+  </div>
+
+  <div class="button-row">
+    <button id="checkBtn">Check Answer</button>
+    <button id="nextBtn">Next Card</button>
+    <button id="loadBtn">Load Flashcards</button>
+  </div>
+
+  <div>
+    <textarea id="outputArea" rows="4" cols="50" readonly></textarea>
+  </div>
+</div>
+
+<script src="study.js"></script>
+</body>
+</html>

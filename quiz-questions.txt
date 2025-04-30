@@ -1,0 +1,29 @@
+What is the capital of France?
+Paris
+London
+Berlin
+Rome
+
+Which planet is known as the Red Planet?
+Mars
+Venus
+Jupiter
+Saturn
+
+What is the largest mammal?
+Blue whale
+Elephant
+Giraffe
+Hippopotamus
+
+Which language is used for web development?
+HTML
+Python
+C++
+Java
+
+What is the boiling point of water in Celsius?
+100
+90
+80
+120
